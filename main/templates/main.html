@@ -88,6 +88,12 @@
 
         return false;
       }
+
+      document.getElementById("moodEntryForm").addEventListener("submit", (e) => {
+            e.preventDefault();
+            addMoodEntry();
+        });
+
       async function getMoodEntries(){
           return fetch("{% url 'main:show_json' %}").then((res) => res.json())
       }
